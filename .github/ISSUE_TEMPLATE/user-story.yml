@@ -33,6 +33,14 @@ body:
       options:
         - label: Frontend (screens, library-frontend)
         - label: Backend (API / data, library-backend)
+  - type: input
+    id: design
+    attributes:
+      label: Design (Figma)
+      description: Link to the Figma frame(s) for this story, if it changes a screen. Several links? Separate them with a space.
+      placeholder: https://www.figma.com/design/…
+    validations:
+      required: false
   - type: textarea
     id: notes
     attributes:

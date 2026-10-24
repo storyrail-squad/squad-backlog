@@ -25,14 +25,16 @@ body:
         AC3: An empty history shows "Never borrowed".
     validations:
       required: true
-  - type: checkboxes
-    id: lanes
+  - type: textarea
+    id: applications
     attributes:
-      label: Which parts change?
-      description: Helps requirement fetch decide the lanes. Leave empty if unsure.
-      options:
-        - label: Frontend (screens, library-frontend)
-        - label: Backend (API / data, library-backend)
+      label: Applications
+      description: One line per existing application this story changes, starting with its repo name, saying what changes and which other application it calls. StoryRail finds and clones them itself, builds them at the same time and merges them in this dependency order.
+      placeholder: |
+        - library-backend (books API): reservations per book, a queue of at most 5
+        - library-frontend (catalog app): a Reserve button and the queue position, calls library-backend
+    validations:
+      required: true
   - type: input
     id: design
     attributes:

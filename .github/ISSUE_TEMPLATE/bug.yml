@@ -1,5 +1,5 @@
 name: Bug
-description: A defect (fixed with StoryRail: /storyrail fix <issue number>)
+description: "A defect (fixed with StoryRail: /storyrail fix <issue number>)"
 title: "[Bug] "
 labels: ["bug"]
 body:
@@ -30,14 +30,15 @@ body:
       placeholder: The page shows a blank error toast and the book is not saved.
     validations:
       required: true
-  - type: checkboxes
-    id: lanes
+  - type: textarea
+    id: applications
     attributes:
-      label: Where is it?
-      description: Helps requirement fetch pick the lane. Leave empty if unsure.
-      options:
-        - label: Frontend (screens, library-frontend)
-        - label: Backend (API / data, library-backend)
+      label: Applications
+      description: The application the bug is in (its repo name), one line each. Leave empty if unsure; requirement fetch will propose one and ask.
+      placeholder: |
+        - library-frontend (catalog app): the Save button stays enabled
+    validations:
+      required: false
   - type: dropdown
     id: severity
     attributes:
